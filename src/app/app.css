@@ -1,0 +1,3 @@
+@tailwind base; /* removes all styles that the browser gives by default */
+@tailwind components;
+@tailwind utilities;
