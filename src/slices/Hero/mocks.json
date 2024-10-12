@@ -1,0 +1,100 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Handsome"
+						}
+					}
+				]
+			},
+			"subheading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ullamco amet anim consectetur culpa ad laborum laboris et consectetur commodo. Id aliquip occaecat incididunt nulla Lorem eu sint dolore aliquip veniam ex sint velit deserunt. Labore culpa in qui labore officia aute ut ipsum."
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eu culpa incididunt nostrud reprehenderit consequat ipsum in magna eu exercitation Lorem enim."
+						}
+					}
+				]
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "produce",
+				"type": "Text"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "stronger"
+				}
+			},
+			"shampoo_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
+					"width": 4752,
+					"height": 3168
+				},
+				"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
+				"width": 4752,
+				"height": 3168,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"second_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Avoid"
+						}
+					}
+				]
+			},
+			"second_body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolore ut sunt quis laboris nulla tempor cillum et elit velit mollit consequat magna."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

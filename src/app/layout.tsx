@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={alpino.variable} >
-      <body>
+      <body className=' overflow-x-hidden bg-[#F7D210]'  >
         <Header/>
         <main>
         {children}
