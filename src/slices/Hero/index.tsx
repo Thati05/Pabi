@@ -4,12 +4,13 @@ import { PrismicRichText ,SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
  
 import { Bounded } from "@/components/Bounded";
 import Button from "@/components/Button";
 import { TextSplitter } from "@/components/TextSplitter";
 
-gsap.registerPlugin(useGSAP)
+gsap.registerPlugin(useGSAP, ScrollTrigger)
 /**
  * Props for `Hero`.
  */
@@ -45,7 +46,44 @@ useGSAP (() => {
     opacity:0,
     y:10,
     duration:.7,
-  })
+  });
+
+//Scroll tiggger timeline 
+
+const scrollTL = gsap.timeline({
+  scrollTrigger: {
+    trigger:".hero",
+    start:"top top",
+    end:"bottom bottom",
+    scrub:1.5,
+    markers:true
+
+  }
+})
+//changing the background color on scroll
+scrollTL
+.fromTo("body",{
+  backgroundColor:"#FDE047"
+},{
+  backgroundColor:"#D9f990",
+  overwrite:"auto"
+},
+//Postion parameter to prevent the color from mixing when the user scolls down 
+2,
+).from(".text-side-heading .split-char", {
+  scale:1.3,
+  y:30,
+  rotate:-25,
+  opacity:0,
+  stagger:.1,
+  ease:"back.out(3)",
+  duration:.5
+}).from(".text-side-body",{
+  y:10,
+  opacity:0
+})
+
+
 
 })
 
