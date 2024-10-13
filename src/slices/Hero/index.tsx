@@ -9,6 +9,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Bounded } from "@/components/Bounded";
 import Button from "@/components/Button";
 import { TextSplitter } from "@/components/TextSplitter";
+import { View } from "@react-three/drei";
+import Scene from "./Scene";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 /**
@@ -109,6 +111,12 @@ scrollTL
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
+      
+      <View className=" hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block " >
+        <Scene/>
+      </View>
+
+
       <div className="grid">
 
         <div className="grid h-screen place-items-center">

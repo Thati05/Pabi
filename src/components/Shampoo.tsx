@@ -29,7 +29,7 @@ export type ShampooProps = {
 
 export function Shampoo({
   flavor = "peach",
-  scale = 0.5,
+  scale = 0.55,
   ...props
 }: ShampooProps) {
   const { nodes } = useGLTF('/Shampoo_5.glb');

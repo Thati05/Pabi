@@ -1,8 +1,9 @@
 "use client"
 import { Canvas } from "@react-three/fiber"
-import { Shampoo } from "./Shampoo"
-import { Environment, Float } from "@react-three/drei"
-import { RotateNode } from "three/webgpu"
+
+import { View } from "@react-three/drei"
+
+
 
 type Props = {}
 
@@ -27,20 +28,7 @@ const ViewCanvas = (props: Props) => {
     }}
     
     >
-
-    {/*A mesh is an 3-D object  */}
-   <Float
-   speed={1} // Animation speed, defaults to 1
-   rotationIntensity={3} // XYZ rotation intensity, defaults to 1
-   floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-   floatingRange={[-0.1, 0.1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
-   >
-
-<Shampoo  />
-   </Float>
-<Environment files='/hdrs/lobby.hdr' environmentIntensity={1} />
-
-   {/* postion are co-ordinates of the spotlight   */}
+    <View.Port/>
   </Canvas>
   )
 }
