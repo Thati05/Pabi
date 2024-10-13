@@ -56,7 +56,7 @@ const scrollTL = gsap.timeline({
     start:"top top",
     end:"bottom bottom",
     scrub:1.5,
-    markers:true
+   
 
   }
 })
