@@ -14,6 +14,7 @@ import { TextSplitter } from "@/components/TextSplitter";
 import Scene from "./Scene";
 import { Bubbles } from "./Bubbles";
 import { useStore } from "@/hooks/useStore";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 /**
@@ -28,9 +29,11 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 
   const ready = useStore((state) => state.ready);
 
+  const isDesktop = useMediaQuery("(min-width:768px)", true);
+
 useGSAP (() => {
-  
-  if (!ready) return;
+
+  if (!ready && isDesktop) return;
 
 
   const introTL = gsap.timeline()
@@ -96,7 +99,7 @@ scrollTL
 
 
 
-}, {dependencies:[ready]}); //Add ready to the dependencies so useGsap reruns when the value changes
+}, {dependencies:[ready, isDesktop]}); //Add ready to the dependencies so useGsap reruns when the value changes
 
 
 return (
@@ -105,11 +108,13 @@ return (
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      
-      <View className=" hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block " >
+      {isDesktop && (
+
+        <View className=" hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block " >
         <Scene/>
         <Bubbles/>
       </View>
+      )}
 
 
       <div className="grid">
