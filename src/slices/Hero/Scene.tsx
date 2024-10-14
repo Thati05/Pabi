@@ -8,12 +8,16 @@ import Floating from "@/components/Floating"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useStore } from "@/hooks/useStore"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 type Props = {}
 
 export default function Scene({}: Props) {
+ const isReady = useStore((state) => state.isReady)
+
+
  const bottle1 = useRef<Group>(null)
  const bottle2 = useRef<Group>(null)
  const bottle3 = useRef<Group>(null) 
@@ -45,6 +49,10 @@ export default function Scene({}: Props) {
 
     !groupRef.current
   ) return;
+
+   //We call isReady() after the can ref checks
+   isReady()
+
 
   //Set the location of the bottles
 

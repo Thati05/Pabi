@@ -5,13 +5,15 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { View } from "@react-three/drei";
+
  
 import { Bounded } from "@/components/Bounded";
 import Button from "@/components/Button";
 import { TextSplitter } from "@/components/TextSplitter";
-import { View } from "@react-three/drei";
 import Scene from "./Scene";
 import { Bubbles } from "./Bubbles";
+import { useStore } from "@/hooks/useStore";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 /**
@@ -24,7 +26,13 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
 
+  const ready = useStore((state) => state.ready);
+
 useGSAP (() => {
+  
+  if (!ready) return;
+
+
   const introTL = gsap.timeline()
   introTL
   .set('.hero', {opacity:1})
@@ -88,25 +96,10 @@ scrollTL
 
 
 
-})
+}, {dependencies:[ready]}); //Add ready to the dependencies so useGsap reruns when the value changes
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  return (
+return (
     <Bounded
       className="hero opacity-0 "
       data-slice-type={slice.slice_type}

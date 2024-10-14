@@ -10,7 +10,7 @@ const o = new THREE.Object3D();
 
 // Customizations in case you want to use this in other scenes.
 export function Bubbles({
-  count = 70,
+  count = 50,
   speed = 5,
   bubbleSize = 0.4,
   opacity = 0.2,
