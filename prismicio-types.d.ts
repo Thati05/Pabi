@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = HeroSlice;
+type PageDocumentDataSlicesSlice = SkydiveSlice | HeroSlice;
 
 /**
  * Content for Page documents
@@ -190,6 +190,65 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Primary content in *Skydive → Default → Primary*
+ */
+export interface SkydiveSliceDefaultPrimary {
+  /**
+   * Sentence field in *Skydive → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skydive.default.primary.sentence
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sentence: prismic.KeyTextField;
+
+  /**
+   * Flavor field in *Skydive → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: strawberry
+   * - **API ID Path**: skydive.default.primary.flavor
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  flavor: prismic.SelectField<
+    "strawberry" | "peach" | "citrus" | "watermelon" | "pineapple",
+    "filled"
+  >;
+}
+
+/**
+ * Default variation for Skydive Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SkydiveSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SkydiveSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Skydive*
+ */
+type SkydiveSliceVariation = SkydiveSliceDefault;
+
+/**
+ * Skydive Shared Slice
+ *
+ * - **API ID**: `skydive`
+ * - **Description**: Skydive
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SkydiveSlice = prismic.SharedSlice<
+  "skydive",
+  SkydiveSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -219,6 +278,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      SkydiveSlice,
+      SkydiveSliceDefaultPrimary,
+      SkydiveSliceVariation,
+      SkydiveSliceDefault,
     };
   }
 }
