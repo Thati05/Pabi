@@ -11,7 +11,7 @@ import ViewCanvas from '@/components/ViewCanvas';
 
 
 const alpino = localFont({
-  src:'../../public/fonts/Alpino-Variable.woff2',
+  src:'../../public/fonts/Atop-R99O3.ttf',
   display: 'swap',
   weight:"100 900", //This means that we want the font weights from  100 to/through 900
   variable:"--font-alpino" 
@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={alpino.variable} >
-      <body className=' overflow-x-hidden bg-[#F7D210]'  >
+      <body className=' overflow-x-hidden bg-[#FDFCEA]'  >
         <Header/>
         <main>
         {children}

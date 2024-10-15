@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import { Content } from "@prismicio/client";
-import { Cloud, Clouds, Environment, OrbitControls, Text } from "@react-three/drei";
+import { Cloud, Clouds, Environment, Text } from "@react-three/drei";
 import { useRef } from "react";
 
 import Floating from "@/components/Floating";
@@ -116,7 +116,7 @@ const scrollTL = gsap.timeline({
 scrollTL
 .to("body",
   {
-    backgroundColor:'#C0F0F5',
+    backgroundColor:'#9EA8FF',
     overwrite:"auto",
     duration:.1
 
@@ -179,7 +179,7 @@ scrollTL
 
       {/* Text */}
       <group ref={wordRef}>
-        {sentence && <ThreeTextBold sentence={sentence} color="#F97315" />}
+        {sentence && <ThreeTextBold sentence={sentence} color="#8755B8" />}
       </group>
 
       {/* Clouds */}
@@ -188,11 +188,11 @@ scrollTL
         <Cloud ref={cloud2Ref} bounds={[10, 10, 2]} />
       </Clouds>
 
-      <OrbitControls />
+      
 
       {/* Lights */}
       <ambientLight intensity={2} color="#9DDEFA" />
-      <Environment files="/hdrs/field.hdr" environmentIntensity={1} />
+      <Environment files="/hdrs/field.hdr" environmentIntensity={.8} />
     </group>
   );
 }
@@ -218,7 +218,7 @@ function ThreeTextBold({
           color={color}
           material={material}
           scale={isDesktop ? 1 : 0.5}
-          font='/fonts/Alpino-Variable.woff'
+          font='/fonts/Atop-R99O3.ttf'
           fontWeight={900}
           anchorX={'center'}
           anchorY={'middle'}

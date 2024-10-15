@@ -17,7 +17,7 @@ const Button = ({butttonLink,buttonText,className}: Props) => {
    
     <PrismicNextLink className={clsx(
       
-  " hover:bg-[#D8070A] rounded-lg px-5 py-4 text-center duration-150 text-xl font-bold uppercase tracking-wide text-white transition-colors bg-[#F15723]", 
+  " rounded-full px-5 py-4 text-center duration-150 text-xl font-bold uppercase tracking-wide  text-white btn transition-colors bg-[#F8B0E2]", 
   
   className,
 )} 

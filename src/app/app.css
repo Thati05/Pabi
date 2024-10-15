@@ -13,3 +13,8 @@
 .group:hover .highlighter-mask {
   transform: translateX(0%);
 }
+
+.btn{
+  border: 5px solid #FC5D91;
+}
+

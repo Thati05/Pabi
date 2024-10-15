@@ -77,9 +77,10 @@ const scrollTL = gsap.timeline({
 //changing the background color on scroll
 scrollTL
 .fromTo("body",{
-  backgroundColor:"#FDE047"
+  backgroundColor:"#FDFCEA",
+  overwrite:"auto"
 },{
-  backgroundColor:"#D9f990",
+  backgroundColor:"#F6DEEE",
   overwrite:"auto"
 },
 //Postion parameter to prevent the color from mixing when the user scolls down 
@@ -122,19 +123,19 @@ return (
         <div className="grid h-screen place-items-center">
           <div className="grid auto-rows-min place-items-center ">
 
-      <h1 className=" hero-header text-center text-[#FFF9C7]  lg:text-[150px] text-9xl font-black uppercase leading-[.8] md:text-[144px] ">
+      <h1 className=" hero-header text-center text-[#FC5D91]  lg:text-[150px] text-9xl font-black uppercase leading-[.8] md:text-[144px] ">
 
    <TextSplitter text={asText(slice.primary.heading)} wordDisplayStyle="block" className="hero-header-word"   /> {/* fixes the hydration error*/}
       </h1>
 
 
-<div className="hero_subheading font-semibold text-5xl lg:text-[50px] mt-12 text-[#0B4924] ">
+<div className="hero_subheading  text-2xl font-extralight lg:text-[50px] mt-12 text-[#FF5702] ">
  <PrismicRichText field={slice.primary.subheading} />
 </div>  
 
-<div className="hero-body text-2xl font-normal text-[#0B4924]  ">
+{/*<div className="hero-body text-2xl font-normal text-[#FF5702]  ">
    <PrismicRichText field={slice.primary.body} />
-</div>
+</div>*/}
 <div className=" mt-12">
 <div>
   <Button butttonLink={slice.primary.button_link} buttonText={slice.primary.button_text} 
@@ -155,10 +156,10 @@ className="hero-button mt-12"
    
     <div>
 
-     <h2 className="text-side-heading text-balance text-5xl font-black uppercase text-[#0B4924] lg:text-7xl  ">
+     <h2 className="text-side-heading text-balance text-5xl font-black uppercase text-[#2D001E] lg:text-7xl  ">
      <TextSplitter text={asText(slice.primary.second_heading)}/>
      </h2>
-    <div className="text-side-body mt-4 max-w-xl text-balance text-xl font-normal text-[#0B4924] ">
+    <div className="text-side-body mt-4 max-w-xl text-balance text-xl font-normal text-[#2D001E] ">
 
    <PrismicRichText field={slice.primary.second_body} />
     </div>
