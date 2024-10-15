@@ -149,6 +149,10 @@ scrollTL
   duration:0.5, 
   ease: " back.in(1.7?"
 })
+.to(cloudsRef.current.position, {
+  z:7,
+  duration:.5
+})
 
 
 
@@ -167,8 +171,10 @@ scrollTL
         floatIntensity={3}
         rotationIntensity={0} //Setting the floating roattion equals to 0 decreases the wobbliness of the bottle 
         floatSpeed={3}
+        >
+        <pointLight intensity={30} color="#8C0413" decay={0.6}/>
         
-        ></Floating>
+        </Floating>
       </group>
 
       {/* Text */}
